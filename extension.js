@@ -31,7 +31,19 @@
          }
 
          */
-
+bot.commands.commandCommand = {
+         command: 'cookie',
+         rank: 'user',
+         type: 'exact',
+         functionality: function(chat, cmd){
+         if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+         if( !bot.commands.executable(this.rank, chat) ) return void (0);
+         else{
+            API.sendChat("/me You have been gifted a cookie! Remember to say thanks!")
+         }
+         }
+         }
+         
         bot.commands.baconCommand = {
             command: 'bacon',  //The command to be called. With the standard command literal this would be: !bacon
             rank: 'user', //Minimum user permission to use the command
@@ -53,7 +65,7 @@
     //Change the bots default settings and make sure they are loaded on launch
 
     localStorage.setItem("basicBotsettings", JSON.stringify({
-        botName: "basicBot",
+        botName: "RAoA Bot",
         language: "english",
         chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
         maximumAfk: 120,
@@ -66,7 +78,7 @@
         cycleGuard: true,
         maximumCycletime: 10,
         timeGuard: true,
-        maximumSongLength: 10,
+        maximumSongLength: 7,
         autodisable: true,
         commandCooldown: 30,
         usercommandsEnabled: true,
@@ -82,29 +94,32 @@
         ],
         afkpositionCheck: 15,
         afkRankCheck: "ambassador",
-        motdEnabled: false,
+        motdEnabled: true,
         motdInterval: 5,
-        motd: "Temporary Message of the Day",
+        motd: "Welcome to the RAoA Plug.dj! Checkout the subreddit at https://www.reddit.com/r/Random_Acts_Of_Amazon",
         filterChat: true,
         etaRestriction: false,
         welcome: true,
         opLink: null,
-        rulesLink: null,
+        rulesLink: "https://docs.google.com/document/d/1l9bZKR0-w4iTHwKpXktT7T8Y7YnTfUGXlaUa6GMFQsk/edit",
         themeLink: null,
         fbLink: null,
         youtubeLink: null,
-        website: null,
-        intervalMessages: [],
+        website: "bit.ly/RAoAReddit",
+        intervalMessages: [
+            ["Remeber to check out the rules at bit.ly/RAoAPlugRules"],
+            ["You can find cool emojis to use in this chat at http://www.emoji-cheat-sheet.com/"]
+            ],
         messageInterval: 5,
         songstats: true,
         commandLiteral: "!",
         blacklists: {
-            NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
-            OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json"
+            NSFW: "https://rawgit.com/NuclearWolfMC/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
+            OP: "https://rawgit.com/NuclearWolfMC/basicBot-customization/master/blacklists/ExampleOPlist.json"
         }
     }));
 
     //Start the bot and extend it when it has loaded.
-    $.getScript('https://rawgit.com/Yemasthui/basicBot/master/basicBot.js', extend);
+    $.getScript('https://rawgit.com/NuclearWolfMC/basicBot/master/basicBot.js', extend);
 
 }).call(this);
