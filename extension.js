@@ -98,11 +98,10 @@ you are confused about feel free to contact me on skype (MineplexMitch) or on re
         fbLink: null,
         youtubeLink: null,
         website: "bit.ly/RAoAReddit",
-        intervalMessages: [
-            ["Remeber to check out the rules at bit.ly/RAoAPlugRules"],
-            ["You can find cool emojis to use in this chat at http://www.emoji-cheat-sheet.com/"]
+        intervalMessages: ["Remeber to check out the rules at bit.ly/RAoAPlugRules",
+        "You can find cool emojis to use in this chat at http://www.emoji-cheat-sheet.com/ !"
             ],//cool tips displayed every minute(s) defined in messageInterval below
-        messageInterval: 5,
+        messageInterval: 3,
         songstats: true, //stats ov woots/mehs/grabs.
         commandLiteral: "!",//thing that goes infront of the command
         blacklists: {
